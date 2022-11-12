@@ -14,8 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
+from . import views
+
+#pylint: disable=no-member
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('workers/<int:hierarchy_id>', include("workers.urls"))
 ]
+
+handler404 = views.not_found_handler
