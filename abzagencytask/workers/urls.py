@@ -4,5 +4,6 @@ from . import views
 
 #pylint: disable=no-member
 urlpatterns = [
-    path('', views.index)
+    path('<int:hierarchy_id>/', views.index),
+    path('test/', views.test),
 ]
