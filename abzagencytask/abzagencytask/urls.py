@@ -13,16 +13,18 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from typing import Union
+
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import include, path
+from django.urls import include, path, URLResolver, URLPattern
 
 from abzagencytask import settings
 
 from . import views
 
 #pylint: disable=no-member
-urlpatterns = [
+urlpatterns: list[Union[URLPattern, URLResolver]] = [
     path('admin/', admin.site.urls),
     path('workers/', include("workers.urls"))
 ]

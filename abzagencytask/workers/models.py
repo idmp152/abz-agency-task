@@ -2,6 +2,7 @@ from django.db import models
 
 
 class Workers(models.Model):
+    """Workers main app model."""
     name = models.CharField(max_length=155)
     surname = models.CharField(max_length=155)
     patronymic = models.CharField(max_length=155)
@@ -12,4 +13,4 @@ class Workers(models.Model):
     photo = models.ImageField(upload_to="images/workers/")
 
     def __str__(self) -> str:
-        return self.name
+        return str(self.name)
