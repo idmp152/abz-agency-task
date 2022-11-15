@@ -3,6 +3,7 @@ from django.urls import reverse
 
 
 class Workers(models.Model):
+    """Workers main app model."""
     name = models.CharField(max_length=155)
     surname = models.CharField(max_length=155)
     patronymic = models.CharField(max_length=155)
