@@ -1,0 +1,25 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+}
+
+.container--prev {
+    width: 500px;
+}
+
+.container--workers {
+    color: cadetblue;
+}
+
+.container--workers p {
+    color:darkseagreen;
+}
