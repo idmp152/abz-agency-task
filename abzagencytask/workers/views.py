@@ -18,11 +18,13 @@ def index(request) -> HttpResponseBadRequest | HttpResponse:
 
     return render(request, 'workers/index.html', context=context)
 
-def show_worker(request) -> HttpResponseBadRequest | HttpResponse:
+def show_worker(request, worker_id) -> HttpResponseBadRequest | HttpResponse:
     if request.GET is None:
         return HttpResponseBadRequest()
 
-    return render(request, 'workers/test.html')
+    context={"worker_id": worker_id, "worker":Workers.objects.get(pk=worker_id)}
+
+    return render(request, 'workers/worker.html', context=context)
 
 # def index(request: HttpRequest, hierarchy_id: int) -> HttpResponse:
 #     """Index view for the workers app."""
@@ -35,17 +37,3 @@ def show_worker(request) -> HttpResponseBadRequest | HttpResponse:
 #             f"<p>{i}. Вячеслав Бебрович</p>" for i in map(str, range(hierarchy_id))
 #         )
 #     )  # type: ignore
-
-
-# def test_work_props(request: HttpRequest) -> HttpResponse:
-#     """The command for testing the passing of the props
-
-#     Args:
-#         request (_type_): HttpRequest
-
-#     Returns:
-#         HttpResponse: HttpResponse
-#     """
-#     posts = Workers.objects.all()
-
-#     return render(request, "workers/index.html", {"posts": posts})
