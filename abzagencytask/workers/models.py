@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Workers(models.Model):
@@ -14,3 +15,6 @@ class Workers(models.Model):
 
     def __str__(self) -> str:
         return str(self.name)
+
+    def get_absolute_url(self) -> str:
+        return reverse('worker', kwargs={'worker_id': self.pk})

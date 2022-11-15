@@ -1,13 +1,17 @@
 {% extends 'workers/base.html' %}
 
 {% block content %}
-<h1>Workers</h1>
-<ul>
+<main class="container">
+  <h1 class="container--prev">Workers</h1>
+  <div class="container--workers">
     {% for p in posts %}
-    <li>
-        <h2>{{ p.name }}</h2>
-        <p>{{ p.salary_amount }}</p>
-    </li>
+    <div class="worker">
+      <a href="{{ p.get_absolute_url }}" ><h3>Name: {{ p.name|title }}</h3></a>
+      <p>Salary: {{ p.salary_amount }}<br>
+        Date employ: {{ p.date_employ }}</p>
+    </div>
     {% endfor %}
-</ul>
+    <h3>And {{ count }} more employees</h4>
+  </div>
+</main>
 {% endblock %}
