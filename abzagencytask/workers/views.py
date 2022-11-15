@@ -24,7 +24,7 @@ def show_worker(request, worker_id) -> HttpResponseBadRequest | HttpResponse:
 
     context={"worker_id": worker_id, "worker":Workers.objects.get(pk=worker_id)}
 
-    return render(request, 'workers/worker.html', context=context)
+    return render(request, 'workers/single_worker.html', context=context)
 
 # def index(request: HttpRequest, hierarchy_id: int) -> HttpResponse:
 #     """Index view for the workers app."""
