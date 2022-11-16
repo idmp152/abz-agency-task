@@ -17,4 +17,5 @@ class Workers(models.Model):
         return str(self.name)
 
     def get_absolute_url(self) -> str:
+        """Gets the service absolute url by the worker ID"""
         return reverse('worker', kwargs={'worker_id': self.pk})
