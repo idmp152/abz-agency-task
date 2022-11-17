@@ -1,4 +1,9 @@
-from django.http import Http404, HttpResponseNotFound, HttpRequest
+from django.http import Http404, HttpResponseNotFound, HttpRequest, HttpResponse
+from django.shortcuts import redirect
+
+def root_index(_: HttpRequest) -> HttpResponse: # Request is ignored
+    """Root index page."""
+    return redirect('workers/')
 
 def not_found_handler(request: HttpRequest, _: Http404) -> HttpResponseNotFound:
     """404 Not Found error handler for the Workers app"""
