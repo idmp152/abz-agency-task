@@ -1,7 +1,7 @@
 {% extends 'workers/base.html' %}
 
 {% block content %}
-<main class="container">
+<div class="container">
   <h1 class="container--prev">Workers</h1>
   <div class="container--workers">
     {% for p in posts %}
@@ -11,7 +11,9 @@
         Date employ: {{ p.date_employ }}</p>
     </div>
     {% endfor %}
-    <h3>And {{ count }} more employees</h4>
+    {% if remaining > 0 %}
+      <h3>And {{ remaining }} more employees</h4>
+    {% endif %}
   </div>
-</main>
+</div>
 {% endblock %}
