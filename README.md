@@ -24,7 +24,25 @@
 
 ## Assignment brief description
 
-TODO
+In this test assignment you must implement an online employee directory containing over 50,000 employees.
+Technical requirements:
+
+- Django 2.1+ / Flask 1.0+
+- MySQL 5.6+ / PostgreSQL 10+
+- Python 3.7+
+
+Any Python/JavaScript/CSS libraries are allowed to use. Any 3rd-party libraries must be added to the project using pip/bower/npm/yarn.
+
+- Each employee information must be stored in the database and contain following data:
+  - Full name
+  - Job title
+  - Employment date
+  - Salary
+
+- Each employee has a chief 
+- Database must contain at least 50,000 employees with 5 hierarchy levels
+
+Additional optional requirements can be seen at the link in the end of the README document.
 
 ## Model ERD structure
 
