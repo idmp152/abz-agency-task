@@ -26,9 +26,9 @@
 
 TODO
 
-## Model/view structure
+## Model ERD structure
 
-TODO
+![ERD](https://media.discordapp.net/attachments/811098595084337174/1042863480128163840/model_visualization.png)
 
 ## Assignment link
 
