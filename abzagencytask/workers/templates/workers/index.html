@@ -1,16 +1,27 @@
 {% extends 'workers/base.html' %}
 
 {% block content %}
-<div class="container">
-  <h1 class="container--prev">Workers</h1>
-  <div class="container--workers">
-    {% for p in posts %}
-    <div class="worker">
-      <a href="{{ p.get_absolute_url }}" ><h3>Name: {{ p.name|title }}</h3></a>
-      <p>Salary: {{ p.salary_amount }}<br>
-        Date employ: {{ p.date_employ }}</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">Uew & Co Ltd.</span>
+    <div class="navbar-nav">
+      <a class="nav-link active" aria-current="page" href="/workers">Home</a>
+      <a class="nav-link" href="/admin">Admin</a>
+      <a class="nav-link active" href="#">Login</a>
     </div>
+  </div>
+</nav>
+<div class="container-fluid main">
+  <div>
+    <div class="row"></div>
+    {% for p in posts %}
+      <div class="col worker-col">
+        <a href="{{ p.get_absolute_url }}" ><h3 class="worker-name">Name: {{ p.name|title }}</h3></a>
+        <p class="worker-info">Salary: {{ p.salary_amount }}<br>
+          Date of employment: {{ p.date_employ }}</p>
+      </div>
     {% endfor %}
+    </div>
     {% if remaining > 0 %}
       <h3>And {{ remaining }} more employees</h4>
     {% endif %}
