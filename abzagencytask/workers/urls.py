@@ -6,6 +6,5 @@ from . import views
 urlpatterns = [
     path('', views.index, name="workers"),
     path('<int:worker_id>/', views.show_worker, name='worker'),
-    # path('<int:hierarchy_id>/', views.index),
-    # path('test/', views.test_work_props),
+    path('<slug:position_slug>/', views.crutch, name='position'),
 ]

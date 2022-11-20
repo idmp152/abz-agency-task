@@ -8,9 +8,13 @@
     <li>Name: {{ worker.name|title }}</li>
     <li>Surname: {{ worker.surname|title }}</li>
     <li>Patronymic: {{ worker.patronymic|title }}</li>
-    <li>Position: {{ worker.position }}</li>
+    <li>Position: {{ worker.worker }}</li>
     <li>Salary: {{ worker.salary_amount }}</li>
+    {% if person.image %}
+    <img src="{{ worker.photo.url }}">
+    {% else %}
     <li>Photo: not available yet</li>
+    {% endif %}
     <li>Chief: {{ worker.chief_id }}</li>
 </ul>
 
