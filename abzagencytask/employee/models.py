@@ -22,7 +22,7 @@ class Employee(models.Model):
     date_employ = models.DateTimeField(auto_now_add=True)
     salary = models.IntegerField(null=True, blank=True)
     chief = models.ForeignKey("self", null=True, blank=True, on_delete=models.PROTECT)
-    image = models.ImageField(upload_to="images/employees/", null=True, blank=True)
+    image = models.ImageField(upload_to="images/employee/", null=True, blank=True)
 
     def __str__(self) -> str:
         return str(self.name)
