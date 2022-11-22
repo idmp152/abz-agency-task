@@ -1,9 +1,8 @@
-{% extends 'workers/base.html' %}
+{% extends 'employee/base.html' %}
 
 {% block content %}
 <div class="container-fluid main">
   <div class="row">
-    {{ position }}
     {% for p in posts %}
     <div class="col">
       <div class="card worker-card">
@@ -25,11 +24,5 @@
   {% if remaining > 0 %}
   <h3 class="text-white mb-5 text-center">And {{ remaining }} more employees</h3>
   {% endif %}
-  <h4 class="text-white text-center">View employees by position</h4>
-  <ul class="text-white text-center">
-    {% for p in positions %}
-    <a href="{{ p.get_absolute_url }}"><li>{{ p }}</li></a>
-    {% endfor %}
-  </ul>
 </div>
 {% endblock %}
