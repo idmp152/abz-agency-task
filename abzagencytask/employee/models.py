@@ -4,6 +4,28 @@ from django.db import models
 
 # Create your models here.
 
+# To fill in the database in `manage.py shell`
+# You need to enter
+
+# from employee.models import Employee
+# from django_seed import Seed
+# from random import randint
+
+# seeder = Seed.seeder()
+
+# seeder.add_entity(
+#     Employee,
+#     50,
+#     {
+#         "position": None,
+#         "name": lambda x: seeder.faker.first_name(),
+#         "surname": lambda x: seeder.faker.last_name(),
+#         'chief': None,
+#         'image': lambda x: f"images/employee/{randint(1, 3)}.jpg",
+#     },
+# )
+# seeder.execute()
+
 
 class Employee(models.Model):
     """There should be your comment here"""
@@ -16,7 +38,6 @@ class Employee(models.Model):
         max_length=50,
         default=5,
         null=True,
-        blank=True,
         on_delete=models.PROTECT,
     )
     date_employ = models.DateTimeField(auto_now_add=True)

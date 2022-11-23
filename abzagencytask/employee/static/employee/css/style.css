@@ -1,13 +1,16 @@
+html {
+    background: linear-gradient(to right top, #3133ad, #953bd1);
+}
+
+body {
+    background-color: transparent !important;
+}
+
 html, body {
     margin: 0;
     padding: 0;
 
-    height: 100vh;
-}
-
-.main {
-    height: calc(100vh - 56px);
-    background: linear-gradient(to right top, #3133ad, #953bd1);
+    min-height: 100%;
 }
 
 .employee-card {

@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'livereload', # AUTO RELOAD HTML PAGE
     'django.contrib.staticfiles',
-    'employee.apps.EmployeeConfig'
+    'employee.apps.EmployeeConfig',
+    'django_seed',
 ]
 
 MIDDLEWARE = [

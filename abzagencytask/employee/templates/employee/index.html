@@ -1,7 +1,7 @@
 {% extends 'employee/base.html' %}
 
 {% block content %}
-<div class="container-fluid main">
+<div class="container-fluid">
   <div class="row">
     {% for p in posts %}
     <div class="col">
@@ -24,7 +24,7 @@
     {% endfor %}
   </div>
   {% if remaining > 0 %}
-  <h3 class="text-white mb-5 text-center">And {{ remaining }} more employees</h3>
+  <h3 class="text-white text-center mb-0">And {{ remaining }} more employees</h3>
   {% endif %}
 </div>
 {% endblock %}
