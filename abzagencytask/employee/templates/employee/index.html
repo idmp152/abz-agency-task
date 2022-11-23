@@ -1,0 +1,30 @@
+{% extends 'employee/base.html' %}
+
+{% block content %}
+<div class="container-fluid main">
+  <div class="row">
+    {% for p in posts %}
+    <div class="col">
+      <div class="card employee-card" style="width: 18rem;">
+        {% if p.image %}
+        <img src="{{ p.image.url }}" class="card-img-top">
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title">{{ p.name|title }} {{ p.surname|title }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Position: {{ p.position }}</h6>
+          <p class="card-text">
+            Salary: {{ p.salary }}<br />
+            Chief: {{ p.salary }}<br /></p>
+          <small>Date of employment: {{ p.date_employ|date:"d-m-Y" }}
+          </small>
+        </div>
+        <!-- <a class="card-link text-end" href="{{ p.get_absolute_url }}">view</a> -->
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% if remaining > 0 %}
+  <h3 class="text-white mb-5 text-center">And {{ remaining }} more employees</h3>
+  {% endif %}
+</div>
+{% endblock %}

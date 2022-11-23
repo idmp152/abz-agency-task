@@ -27,7 +27,7 @@ from . import views
 urlpatterns: list[Union[URLPattern, URLResolver]] = [
     path('', views.root_index),
     path('admin/', admin.site.urls),
-    path('workers/', include("workers.urls"))
+    path('employee/', include("employee.urls"))
 ]
 
 if settings.DEBUG:
