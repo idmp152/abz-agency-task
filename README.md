@@ -21,6 +21,10 @@
   <a href="https://github.com/ov3rwrite">ov3rwrite</a>, <a href="https://github.com/uewquewqueqwue">uewquewqueqwue</a>
 
 </div>
+  
+## Model ERD structure
+
+![ERD](https://media.discordapp.net/attachments/984506546807537694/1044718187498967100/image.png)
 
 ## Assignment brief description
 
@@ -43,10 +47,6 @@ Any Python/JavaScript/CSS libraries are allowed to use. Any 3rd-party libraries 
 - Database must contain at least 50,000 employees with 5 hierarchy levels
 
 Additional optional requirements can be seen at the link in the end of the README document.
-
-## Model ERD structure
-
-![ERD](https://media.discordapp.net/attachments/811098595084337174/1042863480128163840/model_visualization.png)
 
 ## Assignment link
 
