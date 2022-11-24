@@ -1,9 +1,10 @@
 # pylint: disable=no-member
 # pylint: disable=unused-import
 from django.http import HttpResponse, HttpRequest
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from employee.models import Employee
+from employee.forms import BetaRegistrationForm
 
 # Create your views here.
 
@@ -21,3 +22,23 @@ def index(request: HttpRequest) -> HttpResponse:
     }
 
     return render(request, "employee/index.html", context=context)
+
+def beta_registration_form(request: HttpRequest) -> HttpResponse:
+    if request.method == "POST":
+        form = BetaRegistrationForm(request.POST)
+        if form.is_valid():
+            print(form.cleaned_data)
+
+            try:
+                _nm = form.cleaned_data["login"]
+                Employee.objects.create(name=_nm, surname=_nm)
+                return redirect("employee")
+
+            # pylint: disable=bare-except
+            except:
+                form.add_error(None, "Login failed")
+
+    else:
+        form = BetaRegistrationForm()
+
+    return render(request, "employee/beta_reg.html", {"form": form, "title": "Beta Registration"})
